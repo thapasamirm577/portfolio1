@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+
+:root{
+    --main-color: #FF0066;
+    --white-alph3: rgba(255, 255, 255, 0.342);
+    --pale-yellow: rgb(241, 176, 114);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'STIX Two Math', serif;
+    outline: none;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: linear-gradient(to bottom right, var(--pale-yellow), #fd5e9e);
+
+}
+
+.body_parent_container > .parent_img_container > img:first-child{
+    width: 100%;
+    max-width: 13rem;
+    margin: 1% 0 0 3% ;
+    filter: blur(0.2rem);
+    animation: blobanimation1 3s linear infinite alternate-reverse forwards;
+
+}
+@keyframes blobanimation1 {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(5rem,8rem);
+    }
+}
+
+.body_parent_container > .parent_img_container > img:nth-child(2){
+    width: 100%;
+    max-width: 5rem;
+    display: block;
+    margin: 16% 0 0 85%;
+    filter: blur(0.5rem);
+
+}
+
+.body_parent_container > .parent_img_container > img:last-child{
+    width: 100%;
+    max-width: 8rem;
+    display: block;
+    margin: 5% 0 0 20%;
+    filter: blur(0.2rem);
+    animation: blobanimation 2s linear infinite alternate forwards;
+}
+
+@keyframes blobanimation {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(5rem);
+    }
+}
+@media screen and (max-width: 520px) {
+    .body_parent_container > .parent_img_container > img:nth-child(2){
+        margin: 60% 0 0 75%;
+    }
+}
+.body__navbar{
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem;
+    background: #ff0066de;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    height: 100vh;
+    width: 100%;
+    transform: scale(0);
+    opacity: 0;
+
+}
+.close__navbar{
+    text-align: right;
+}
+#canc__nav{
+    font-size: 3rem;
+    color: azure;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+.body__navbar ul{
+    list-style: none;
+    margin-top: 10rem;
+}
+.body__navbar li {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.body__navbar a{
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+.body__navbar a::before{
+    content: "";
+    display: table;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0.3rem;
+    width: 0;
+    transition: all 500ms linear;
+}
+.body__navbar a:active,
+.body__navbar a:hover::before{
+    width: 100%;
+}
+.active{
+    animation: openModal 1s linear forwards;
+}
+.passive{
+    animation: closeModal 1s linear forwards;
+}
+@keyframes openModal{
+    from{
+        border-radius: 1000px;
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        border-radius: 0;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes closeModal {
+    from{
+        border-radius: 0;
+        transform: scale(1);
+        opacity: 1;
+    }
+    to{
+        border-radius: 1000px;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+nav #menu__icon{
+    height: 5rem;
+    font-size: 5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.main__container{
+    position:absolute;
+    border-radius: 0.5rem;
+    width: 80%;
+    top: 4rem;
+    left: 9%;
+    min-height: 60rem;
+    background-color: transparent;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.3);
+    font-size: 1.8rem;
+    padding: 2rem 5rem;
+}
+.section__intro{
+    padding-top: 8rem;
+}
+.flex__maker{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+.flex__maker > .name__section{
+    width: 50%;
+}
+.btn__home{
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 2rem;
+    color: var(--main-color);
+    transition: all 600ms linear;
+    background-color: var(--white-alph3);
+}
+@media screen and (max-width: 304px) {
+    .btn__home{
+        margin-top: 1rem;
+    }
+}
+.front > p > a:last-child{
+    margin-left: 2rem;
+}
+.btn__home:hover{
+    color: white;
+    background: linear-gradient(to right, var(--main-color), var(--pale-yellow));
+
+}
+
+.section__intro > .flex__maker > 
+.name__section > p > strong > span{
+    font-size: 5rem;
+}
+.prof__intro{
+    margin-top: -1.2rem;
+    display: block;
+    opacity: 0.6;
+}
+.front{
+    display: table;
+}
+.front > p{
+    display: table-cell;
+    vertical-align: middle;
+}
+.flex__maker > .img__section{
+    width: 50%;
+}
+.flex__maker > .img__section > .img{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    border: 1rem solid var(--white-alph3);
+    overflow: hidden;
+    margin: auto;
+    cursor: pointer;
+    transition: all 500ms linear;
+}
+
+.flex__maker > .img__section > .img > img{
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1);
+    transition: all 500ms ease;
+}
+.flex__maker > .img__section > .img > img:hover{
+    transform: scale(1.1);
+}
+.back{
+    display: none;
+}
+
+@media screen and (max-width: 665px) {
+    .section__intro{
+        padding-top: 2rem;
+    }
+    .flex__maker{
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    .flex__maker > .img__section{
+        width: 98%;
+    }
+    .flex__maker > .name__section{
+        width: 98%;
+    }
+    .front{
+        display: none;
+        margin-top: 15%;
+    }
+    .back{
+        display: block;
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-height: 360px) {
+    body{
+        height: 170vh;
+    }
+}
+@media screen and (max-height: 600px) {
+    body{
+        height: 104vh;
+    }
+}
+@media screen and (max-width: 880px) {
+    .main__container{
+        width: 95%;
+        top: 4rem;
+        left: 2.3%;
+    }
+    .main__container{
+        padding: 2rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    .flex__maker > .img__section > .img{
+        width: 20rem;
+        height: 20rem;
+    }
+    .section__intro > .flex__maker > .name__section > p > strong > span{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-height: 655px) {
+    .main__container{
+        top: 2%;
+    }
+}
+
+
+/*------------Contact------------------*/
+.section__contact > h1{
+    padding-top: 2rem;
+    text-align: start;
+    margin-bottom: 2rem;
+}
+.grid__display{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form__section{
+    width: 49%;
+}
+.form__section > form input{
+    height: 3.5rem;
+    width: 80%;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1.3rem;
+    padding: 1rem;
+    background-color: var(--white-alph3);
+}
+.form__section > form textarea{
+    background-color: var(--white-alph3);
+    border-radius: 1.3rem;
+    padding: 1rem;
+    border:none;
+    font-size: 2rem;
+    width: 80%;
+}
+input[type=submit]{
+    height: 4.2rem !important;
+    width: 15rem !important;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+input[type=submit]:hover{
+    color: white;
+    background: linear-gradient(to right, var(--main-color), var(--pale-yellow));
+   
+}
+.contact__detail{
+    width: 49%;
+}
+.phone,
+.email{
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+.social_media_container h5{
+    font-size: 2rem;
+}
+.social__media > a{
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--white-alph3);
+}
+.contact_detail_title{
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+.social__media > a:hover{
+    background:linear-gradient(to right, var(--main-color), var(--pale-yellow));
+    color: blue;
+}
+@media screen and (max-width: 1150px) {
+    .form__section > form input{
+       width: 100%;
+    }
+    .form__section > form textarea{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .grid__display{
+        display: block;
+        margin: auto;
+    }
+    .form__section{
+        width: 98%;
+        margin: 2rem auto;
+
+    }
+    .contact__detail{
+        width: 90%;
+        margin: auto;
+    }
+   
+}
+
+/*---------------about------------*/
+.section__about{
+    margin-top: 2rem;
+}
+.about__intro{
+    text-align: justify;
+    word-break: break-all;
+    margin-bottom: 1rem;
+}
+.skill__title{
+    font-size: 2.2rem;
+}
+.skill{
+    margin: 2rem 0;
+}
+.skills__here > span{
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    background-color: var(--white-alph3);
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+.outer__level1{
+    height: 3rem;
+    border: 0.2rem solid var(--white-alph3);
+    width: 40%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.inner__level1{
+    width: 80%;
+    height: 100%;
+    padding: 0.2rem;
+    text-align: center;
+    color: white;
+    background-color: var(--main-color);
+    transition: all 1s linear;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.outer__level2{
+    height: 3rem;
+    border: 0.2rem solid var(--white-alph3);
+    width: 40%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.inner__level2{
+    width: 50%;
+    height: 100%;
+    padding: 0.2rem;
+    text-align: center;
+    color: white;
+    background-color: var(--main-color);
+    transition: all 1s linear;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.outer__level3{
+    height: 3rem;
+    border: 0.2rem solid var(--white-alph3);
+    width: 40%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.inner__level3{
+    width: 65%;
+    height: 100%;
+    padding: 0.2rem;
+    text-align: center;
+    color: white;
+    background-color: var(--main-color);
+    transition: all 1s linear;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+@media screen and (max-width: 900px) and (min-width: 520px) {
+    .outer__level1,
+    .outer__level2,
+    .outer__level3{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 519.99px) {
+    .outer__level1,
+    .outer__level2,
+    .outer__level3{
+        width: 90%;
+    }
+}
