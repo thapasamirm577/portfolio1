@@ -178,6 +178,9 @@ nav #menu__icon{
 .section__intro{
     padding-top: 8rem;
 }
+.section__intro div a {
+    color: black;
+}
 .flex__maker{
     display: flex;
     flex-wrap: wrap;
@@ -246,7 +249,7 @@ nav #menu__icon{
     object-fit: contain;
     object-position: center;
     transform: scale(1);
-    transition: all 500ms ease;
+    transition: all 5000ms ease;
 }
 .flex__maker > .img__section > .img > img:hover{
     transform: scale(1.1);
@@ -506,3 +509,5 @@ input[type=submit]:hover{
         width: 90%;
     }
 }
+
+/*fasldfjf-dskf */
